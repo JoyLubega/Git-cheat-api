@@ -1,10 +1,8 @@
 const express = require('express')
 const router = express.Router();
-const ObjectId = require('mongoose').Types.ObjectId;
-
+const jwt = require('jsonwebtoken');
 
 const Category = require('../models/category');
-
 
 router.get('/categories', async (req, res)=> {
     try {
@@ -28,8 +26,8 @@ router.post('/category', async (req, res)=>{
     });
     
     try {
-        const exists= await Category.findOne({category:req.body.category})
-        console.log(exists)
+        
+          const exists= await Category.findOne({category:req.body.category})
         if (exists === null){
             const cat = await category.save();
           return   res.status(200).json(cat);
@@ -38,6 +36,7 @@ router.post('/category', async (req, res)=>{
             return res.status(400).json({Message: 'The category Already exists'});
         
         }
+    
       } catch (e) {
         return res.status(400).json({"error": e.message});
       }

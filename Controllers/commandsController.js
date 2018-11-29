@@ -51,7 +51,7 @@ router.post('/:id/command', (req,res)=>{
         cmd.save((err, thecmd)=>{
             if (!err){
                 res.status(201);
-                res.send({"item":thecmd, "message":"Command  Added"});
+                res.send({"Command":thecmd, "message":"Command  Added"});
             }else{
                 console.log('Error in Adding item :'+ JSON.stringify(err, undefined,2))
             }

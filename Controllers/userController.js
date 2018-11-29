@@ -3,8 +3,6 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 
 
-const ObjectId = require('mongoose').Types.ObjectId;
-
 const User = require('../models/user');
 
 
@@ -29,7 +27,7 @@ router.post('/register', async (req, res)=>{
           return   res.status(200).json({"Message":"User Registered successfully",
                                            "user": usr});
       } catch (e) {
-        return res.status(400).json(e);
+        return res.status(400).json(e); 
       }
 
 });
