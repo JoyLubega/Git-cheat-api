@@ -22,11 +22,11 @@ router.get('/categories', async (req, res)=> {
 router.post('/category', async (req, res)=>{
     const  category = new Category({
         category: req.body.category
+        
 
     });
     
     try {
-        
           const exists= await Category.findOne({category:req.body.category})
         if (exists === null){
             const cat = await category.save();
@@ -42,6 +42,22 @@ router.post('/category', async (req, res)=>{
       }
 
 });
+
+router.get('/search',  async(req, res, next)=> {
+  const  q = req.query;
+  
+   try {
+    const value = q['category']
+    const searched = await Category.find({category: new RegExp(value)})
+      return res.status(200).json(searched);
+    
+  } catch (e) {
+    return res.status(400).json({"error": e.message});
+  }
+   
+});
+
+
 
 router.get( '/category/:id', async (req, res)=> {
     try {
