@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Joyce Namuli",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
   "dependencies": {
     "bcrypt": "^3.0.2",
     "cors": "^2.8.5",
