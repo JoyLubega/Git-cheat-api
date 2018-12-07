@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 
-const Category = require('../models/category');
+const Category = require('../Models/category');
 
 router.get('/categories', async (req, res)=> {
     try {

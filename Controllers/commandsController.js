@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const Category = require('../models/category');
-const Cmd = require('../models/commands');
+const Category = require('../Models/category');
+const Cmd = require('../Models/commands');
 
 
 router.get('/:id/commands', async (req, res)=> {
