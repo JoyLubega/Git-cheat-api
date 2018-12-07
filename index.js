@@ -6,8 +6,8 @@ const middleware = require('./middleware');
 
 const { mongoose } = require('./db.js');
 const categoryController = require('./Controllers/categoryController');
-const commandsController = require('./controllers/commandsController')
-const userController = require('./controllers/userController')
+const commandsController = require('./Controllers/commandsController')
+const userController = require('./Controllers/userController')
 
 
 const app = express();
